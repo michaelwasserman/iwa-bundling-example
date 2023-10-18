@@ -1,0 +1,1 @@
+console.log("IWA Bundling Example - Hello world!");

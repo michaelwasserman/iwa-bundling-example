@@ -1,0 +1,20 @@
+{
+  "id": "/",            // Must be "/"
+  "short_name": "IWA Bundling Example",
+  "name": "IWA Bundling Example", // Displayed name instead of isolated-app://gibberish URL
+  "version": "0.1.0",   // Compulsory to be non-null.
+  "icons": [               // Must have at least one valid entry
+    {
+      "src": "icon.png", // Note, this file must exist
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",     // Must be non-empty and refer to a resource in the bundle
+  "display": "standalone", // Should be one of the windowed ones
+  "scope": "/",         // Must be "/"
+  "permissions_policy": {
+    "cross-origin-isolated": ["self"]
+  }
+}
