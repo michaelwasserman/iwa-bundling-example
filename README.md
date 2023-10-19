@@ -2,18 +2,20 @@
 
 A barebones example for bundling an [Isolated Web Application](https://github.com/WICG/isolated-web-apps)
 
+The included `ed25519key.pem` is insecure (per inclusion in this repro); see instructions to replace below.
+TODO: Resolve issues regenerating the key via `$ openssl genpkey -algorithm Ed25519 -out ed25519key.pem`  
+
 ## Prep and Bundle
 
 ```console
 $ git clone https://github.com/michaelwasserman/iwa-bundling-example.git
 $ cd iwa-bundling-example
-$ openssl genpkey -algorithm Ed25519 -out ed25519key.pem
 $ npm i
 $ npm init
 $ npm run build
 ```
 
-This creates `iwa-bundling-example/dist/signed.swbn`.
+This creates `dist/signed.swbn`.
 
 ## Run
 
@@ -21,7 +23,7 @@ This creates `iwa-bundling-example/dist/signed.swbn`.
 $ chrome --enable-features=IsolatedWebApps,IsolatedWebAppDevMode
 ```
 
-chrome://web-app-internals/ -> "Install IWA from Signed Web Bundle" -> iwa-bundling-example/dist/signed.swbn
+chrome://web-app-internals/ -> "Install IWA from Signed Web Bundle" -> dist/signed.swbn
 
 chrome://apps -> "IWA Bundling Example"
 
