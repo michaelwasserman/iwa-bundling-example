@@ -13,21 +13,34 @@ $ npm init
 $ npm run build
 ```
 
-This creates `dist/signed.swbn`.
-
+This creates `iwa-bundling-example.swbn`. Download a pre-built copy <a href="https://raw.githubusercontent.com/michaelwasserman/iwa-bundling-example/main/iwa-bundling-example.swbn">here</a>.
 Note: Keep the new `ed25519key.pem` private key file secure; do not share it in a public repo :)
 
 ## Run
+
+Run Chrome M124+ and enable flags:
+* chrome://flags/#enable-isolated-web-apps
+* chrome://flags/#enable-isolated-web-app-dev-mode
 
 ```console
 $ chrome --enable-features=IsolatedWebApps,IsolatedWebAppDevMode
 ```
 
-chrome://web-app-internals/ -> "Install IWA from Signed Web Bundle" -> dist/signed.swbn
+Visit chrome://web-app-internals/ and point "Install IWA from Signed Web Bundle" to iwa-bundling-example.swbn
 
-Note: If [reinstall fails with a manifest error](crbug.com/1494141), try restarting Chrome.
+Visit chrome://apps and launch "IWA Bundling Example"
 
-chrome://apps -> "IWA Bundling Example"
+Note: If [reinstall fails](https://issues.chromium.org/issues/40286084), try restarting Chrome.
+
+## Alternative: Self-Host a Dev Mode Proxy
+
+```console
+$ git clone https://github.com/michaelwasserman/iwa-bundling-example.git
+$ cd iwa-bundling-example/static
+$ python3 -m http.server [port]
+```
+
+Visit chrome://web-app-internals/ and point "Install IWA via Dev Mode Proxy" to http://localhost:[port]/
 
 ## Docs and resources:
 
@@ -39,6 +52,7 @@ chrome://apps -> "IWA Bundling Example"
 
 * https://github.com/sonkkeli/borderless
 * https://github.com/GoogleChromeLabs/telnet-client
+* https://github.com/michaelwasserman/iwa-windowing-example
 * https://coralfish-dev-access.glitch.me/
 
 ## IWA APIs
