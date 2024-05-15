@@ -2,7 +2,7 @@
   "id": "/",
   "scope": "/",
   "start_url": "/",
-  "name": "IWA Windowing Example",
+  "name": "IWA Bundling Example",
   "version": "1.0.0",
   "display": "standalone",
   "permissions_policy": {
