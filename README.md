@@ -8,8 +8,7 @@ A barebones example for bundling an [Isolated Web Application](https://github.co
 $ git clone https://github.com/michaelwasserman/iwa-bundling-example.git
 $ cd iwa-bundling-example
 $ openssl genpkey -algorithm Ed25519 -out ed25519key.pem
-$ npm i
-$ npm init
+$ npm install
 $ npm run build
 ```
 
